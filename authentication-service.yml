@@ -1,0 +1,39 @@
+jwt:
+  secret: sampletest
+logging:
+  level:
+    org:
+      hibernate:
+        SQL: trace
+        type:
+          descriptor:
+            sql: trace
+      springframework: info
+  pattern:
+    console: '%d{dd-MM-yy} %d{HH:mm:ss.SSS} %-20.20thread %5p %-25.25logger{25} %25M
+      %4L %m%n'
+server:
+  error:
+    include-stacktrace: never
+  port: 8084
+  servlet:
+    context-path: /auth-ms
+spring:
+  application:
+    name: auth-ms
+  datasource:
+    driverClassName: org.h2.Driver
+    password: root
+    url: jdbc:h2:mem:auth-ms
+    username: root
+  h2:
+    console:
+      enabled: true
+  jackson:
+    default-property-inclusion: non-null
+  jpa:
+    database-platform: org.hibernate.dialect.H2Dialect
+    defer-datasource-initialization: true
+    hibernate:
+      hbm2ddl-auto: update
+    show-sql: true
