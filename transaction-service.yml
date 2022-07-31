@@ -1,0 +1,32 @@
+feign:
+  url-account-service: localhost:8086/account-ms
+  url-rule-service: localhost:8090/rules
+server:
+  error:
+    include-stacktrace: never
+  port: 8087
+  servlet:
+    context-path: /transaction-ms
+spring:
+  application:
+    name: transaction-ms
+  datasource:
+    driverClassName: org.h2.Driver
+    password: root
+    url: jdbc:h2:mem:transaction
+    username: root
+  h2:
+    console:
+      enabled: true
+  jpa:
+    database-platform: org.hibernate.dialect.H2Dialect
+    defer-datasource-initialization: true
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+  mvc:
+    pathmatch:
+      matching-strategy: ANT_PATH_MATCHER
+  sql:
+    init:
+      mode: always
