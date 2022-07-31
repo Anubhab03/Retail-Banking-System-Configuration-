@@ -1,0 +1,16 @@
+feign:
+  url-account-service: localhost:8086/account-ms
+  url-auth-service: localhost:8084/auth-ms
+  url-customer-service: localhost:8085/customer
+  url-rules-service: localhost:8090/rules
+  url-transaction-service: localhost:8087/transaction-ms
+server:
+  port: 8080
+  servlet:
+    context-path: /bankmvc
+spring:
+  mvc:
+    throw-exception-if-no-handler-found: true
+    view:
+      prefix: /WEB-INF/jsp/
+      suffix: .jsp
