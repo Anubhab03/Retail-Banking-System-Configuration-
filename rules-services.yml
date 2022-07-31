@@ -1,0 +1,12 @@
+feign:
+  url-account-service: localhost:8086/account-ms
+  url-auth-service: localhost:8084/auth-ms
+jwt:
+  secret: sampletest
+server:
+  port: 8090
+  servlet:
+    context-path: /rules
+spring:
+  application:
+    name: rules
